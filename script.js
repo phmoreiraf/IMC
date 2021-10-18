@@ -8,40 +8,15 @@ function imc() {
     const sexo = document.getElementById('sexo').value;
     const resultado = document.getElementById('resultado');
 
-    if (nome !== '' && altura !== '' && peso !== '') {
+    if (nome !== '' && altura !== '' && peso !== '' && sexo !== '') {
 
         const valorIMC = (peso / (altura ** 2)).toFixed(1);
 
         let classificacao = '';
-        let ideal = '';
+        let ideal = "";
 
-        if (sexo == "masculino") {
-            if (altura < '1.57') {
-                ideal == 'Seu peso ideal e menor que 52KG';
-            } else if (altura > '1.57' && altura < '1.70') {
-                ideal == 'Seu peso ideal esta entre 52-69KG';
-            } else if (altura > '1.70' && altura < '1.80') {
-                ideal == 'Seu peso ideal esta entre 70-85KG';
-            } else if (altura > '1.80' && altura < '1.93') {
-                ideal == 'Seu peso ideal esta entre 86-100KG';
-            }
-        } else if (sexo == "feminino") {
-            if (altura < '1.50') {
-                ideal == 'Seu peso ideal e menor que 45KG';
-            } else if (altura > '1.50' && altura < '1.60') {
-                ideal == 'Seu peso ideal esta entre 45-53KG';
-            } else if (altura > '1.60' && altura < '1.75') {
-                ideal == 'Seu peso ideal esta entre 54-69KG';
-            } else if (altura > '1.75' && altura < '1.85') {
-                ideal == 'Seu peso ideal esta entre 70-82KG';
-            }
-        }
 
-        if (valorIMC < 16) {
-            classificacao = 'abaixo do peso (Grau 1).';
-        } else if (valorIMC < 17) {
-            classificacao = 'abaixo do peso (Grau 2).';
-        } else if (valorIMC < 18.5) {
+        if (valorIMC < 18.5) {
             classificacao = 'abaixo do peso (Grau 3). Procure ter um IMC entre 18.5 a 25';
         } else if (valorIMC < 25) {
             classificacao = 'com o peso ideal. Parabéns!';
@@ -55,7 +30,33 @@ function imc() {
             classificacao = 'com obesidade grau III.';
         }
 
-        resultado.textContent = `Olá, ${nome}! Com ${peso}kg e ${altura}m, seu IMC é ${valorIMC}. Atualmente, você está ${classificacao}, com seu peso ideal igual a ${ideal}`;
+        if (sexo == 'M') {
+
+            if (altura < 1.57) {
+                ideal == "Seu peso ideal e menor que 52KG";
+            } else if (altura < 1.70) {
+                ideal == "Seu peso ideal esta entre 52-69KG";
+            } else if (altura < 1.80) {
+                ideal == "Seu peso ideal esta entre 70-85KG";
+            } else if (altura < 1.93) {
+                ideal == "Seu peso ideal esta entre 86-100KG";
+            }
+
+
+        } else if (sexo == 'F') {
+
+            if (altura < 1.50) {
+                ideal == 'Seu peso ideal e menor que 45KG';
+            } else if (altura < 1.60) {
+                ideal == 'Seu peso ideal esta entre 45-53KG';
+            } else if (altura < 1.75) {
+                ideal == 'Seu peso ideal esta entre 54-69KG';
+            } else if (altura < 1.85) {
+                ideal == 'Seu peso ideal esta entre 70-82KG';
+            }
+        }
+
+        resultado.textContent = `Olá, ${nome}! Com ${peso}kg e ${altura}m, seu IMC é ${valorIMC}. Atualmente, você está ${classificacao}. Peso de ${ideal}`;
 
     } else {
         resultado.textContent = 'Para calcular o seu IMC , preencha todos os campos.';
