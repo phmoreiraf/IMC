@@ -8,12 +8,13 @@ function imc() {
     const sexo = document.getElementById('sexo').value;
     const resultado = document.getElementById('resultado');
 
+
     if (nome !== '' && altura !== '' && peso !== '' && sexo !== '') {
 
         const valorIMC = (peso / (altura ** 2)).toFixed(1);
 
         let classificacao = '';
-        let ideal = "";
+        var ideal = "";
 
 
         if (valorIMC < 18.5) {
@@ -46,13 +47,13 @@ function imc() {
         } else if (sexo == 'F') {
 
             if (altura < 1.50) {
-                ideal == 'Seu peso ideal e menor que 45KG';
+                ideal == "Seu peso ideal e menor que 45KG";
             } else if (altura < 1.60) {
-                ideal == 'Seu peso ideal esta entre 45-53KG';
+                ideal == "Seu peso ideal esta entre 45-53KG";
             } else if (altura < 1.75) {
-                ideal == 'Seu peso ideal esta entre 54-69KG';
+                ideal == "Seu peso ideal esta entre 54-69KG";
             } else if (altura < 1.85) {
-                ideal == 'Seu peso ideal esta entre 70-82KG';
+                ideal == "Seu peso ideal esta entre 70-82KG";
             }
         }
 
