@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IMC</title>
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="css/estilo.css">
 </head>
 
 <body>
@@ -29,6 +29,15 @@
                 <input placeholder="Insira sua altura em metros" type="number" id='altura' required="required">
             </div>
 
+            <div class="box">
+                <label for="sexo">Choose a car:</label>
+
+                <select name="sexo" id="sexo">
+                  <option value="masculino">Masculino</option>
+                  <option value="feminino">Feminino</option>
+                </select>
+            </div>
+
             <button id='calcular'>Calcular</button>
             <!-- <input class="limpar" type="reset" name="limpar" value="Limpar"> -->
             <div class="result" id='resultado'></div>
@@ -42,7 +51,7 @@
             <a href="#"> PEDRO</a>
         </p>
     </footer>
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
